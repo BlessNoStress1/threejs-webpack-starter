@@ -23,8 +23,8 @@ const geometry = new THREE.SphereBufferGeometry( .5, 64, 64 );
 // Materials
 
 const material = new THREE.MeshStandardMaterial()
-material.metalness = 0.7
-material.roughness = 0.2
+material.metalness = .1
+material.roughness = .2
 material.normalMap = NormalTexture;
 
 material.color = new THREE.Color(0xff0000ff)
@@ -35,13 +35,13 @@ scene.add(sphere)
 
 // Lights
 
-const pointLight = new THREE.PointLight(0xffffff, 0.1)
+const pointLight = new THREE.PointLight(0xffffff, 0.5)
 pointLight.position.x = 2
 pointLight.position.y = 3
 pointLight.position.z = 4
 scene.add(pointLight)
 
-const pointLight2 = new THREE.PointLight(0xff0000, 5)
+const pointLight2 = new THREE.PointLight(0xffffff, 5)
 pointLight2.position.x = 1
 pointLight2.position.y = 1
 pointLight2.position.z = 1
@@ -132,9 +132,9 @@ const tick = () =>
     // Update objects
     sphere.rotation.y = .5 * elapsedTime
 
-    sphere. rotation.y += .15 * (TargetX - sphere.rotation.y)
-    sphere. rotation.x += .15 * (TargetY - sphere.rotation.x)
-    sphere. rotation.z += -0.15 * (TargetY - sphere.rotation.x)
+    sphere. rotation.y += .25 * (TargetX - sphere.rotation.y)
+    sphere. rotation.x += .25 * (TargetY - sphere.rotation.x)
+    sphere. rotation.z += -0.25 * (TargetY - sphere.rotation.x)
 
 
     // Update Orbital Controls
